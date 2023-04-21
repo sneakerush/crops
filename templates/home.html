@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vegetation</title>
+</head>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+<body>
+    <h1>Crops in Season</h1>
+    <form>
+        <select id="crop-select">
+            {% for option in options %}
+            <option>{{ option }} </option>
+            {% endfor %}
+        </select>
+        <a href="#" class="btn btn-primary" onclick="changeURL()">Go</a>
+    </form>
+    <!-- JS stuff -->
+    <script>
+        function changeURL() {
+        var dropdown = document.getElementById("crop-select");
+        var season = dropdown.value.toLowerCase();
+        if (season != '') {
+            window.location.href = '/' + season;
+        }
+    }
+    </script>
+</body>
+</html>

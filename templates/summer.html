@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vegetation</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<a href="{{ url_for('home') }}" class="btn btn-primary">Go Back</a>
+<body>
+    <h1>Summer Crops</h1>
+    <label>June 20 - September 21</label>
+    <br></br>
+</body>
+<div style="text-align:center;">
+    <table>
+        <thead>
+            <tr>
+                <th>Crop</th>
+                <th>Days for Germination</th>
+                <th>Harvest (in days)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for crops in data %}
+            <tr>
+                <td>{{ crops['Crop'] }}</td>
+                <td>{{ crops['Days for Germination'] }}</td>
+                <td>{{ crops['Harvest'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+</html>
